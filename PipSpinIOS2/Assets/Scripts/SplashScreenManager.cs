@@ -170,7 +170,7 @@ public class SplashScreenManager : MonoBehaviour {
 
         //middleText.SetActive(false);
         Cover1.GetComponent<SpriteRenderer>().sortingLayerName = "Hidden";
-		yield return new WaitForSeconds (0.9f);
+		yield return new WaitForSeconds (0.12f);
 		//Cover1.GetComponent<SpriteRenderer>().sortingLayerName = "Hidden";
 		//yield return new WaitForSeconds (.5f);
 		Cover2.GetComponent<SpriteRenderer>().sortingLayerName = "Hidden";
