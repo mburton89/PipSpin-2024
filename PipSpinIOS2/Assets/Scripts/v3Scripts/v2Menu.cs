@@ -196,7 +196,8 @@ public class v2Menu : MonoBehaviour {
         else {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                openOptions();
+                //openOptions();
+				changeColor();
             }
             else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
@@ -299,7 +300,8 @@ public class v2Menu : MonoBehaviour {
 					}else if(touchPosition.x > -3.4 && touchPosition.x < -1.751 && touchPosition.y > -5.5 && touchPosition.y < -4.6){
 						displayLeaderboards();
 					}else if(touchPosition.x > -3.4 && touchPosition.x < -2.5 && touchPosition.y > -1.3){
-						openOptions();
+						//openOptions();
+						changeColor();
 					}else if(touchPosition.x > 2.5 && touchPosition.x < 3.5 && touchPosition.y > -1.3){
 						displayHowToPlayMenu();
 					}
@@ -586,7 +588,7 @@ public class v2Menu : MonoBehaviour {
 	}
 
 	public void displayLeaderboards(){
-		StartCoroutine(displayLeaderboardsCo()); 
+		//StartCoroutine(displayLeaderboardsCo()); 
 	}
 
 	private IEnumerator displayLeaderboardsCo(){ 
@@ -610,7 +612,8 @@ public class v2Menu : MonoBehaviour {
 		//KTGameCenter.SharedCenter().ShowLeaderboard();
 	}
 
-	public void openOptions(){
+	public void openOptions()
+	{
 		StartCoroutine(openOptionsCo()); 
 	}
 
@@ -836,18 +839,24 @@ public class v2Menu : MonoBehaviour {
 	}
 
 	
-	private IEnumerator changeColorCo(){ 
-		if(PlayerPrefs.GetInt("hasHackerEdition") == 1){
-			buttonTap2.Play();
-			row5Text.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load ("HackerEditionTextInv", typeof(Sprite)) as Sprite;
-			yield return new WaitForSeconds (.125f);
-			row5Text.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load ("HackerEditionText", typeof(Sprite)) as Sprite;
-			colorChanger.turnColor();
-		}
+	private IEnumerator changeColorCo(){
+        buttonTap2.Play();
+        row5Text.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load("HackerEditionTextInv", typeof(Sprite)) as Sprite;
+        yield return new WaitForSeconds(.125f);
+        row5Text.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load("HackerEditionText", typeof(Sprite)) as Sprite;
+        colorChanger.turnColor();
 
-		else{
-			requiresHackerEditionText.GetComponent<SpriteRenderer>().sortingLayerName = "Player";
-		}
+  //      if (PlayerPrefs.GetInt("hasHackerEdition") == 1){
+		//	buttonTap2.Play();
+		//	row5Text.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load ("HackerEditionTextInv", typeof(Sprite)) as Sprite;
+		//	yield return new WaitForSeconds (.125f);
+		//	row5Text.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load ("HackerEditionText", typeof(Sprite)) as Sprite;
+		//	colorChanger.turnColor();
+		//}
+
+		//else{
+		//	requiresHackerEditionText.GetComponent<SpriteRenderer>().sortingLayerName = "Player";
+		//}
 	}
 
 	public void showHackerEditionScreen(){

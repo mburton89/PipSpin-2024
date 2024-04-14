@@ -46,17 +46,19 @@ public class SplashScreenManager : MonoBehaviour {
 		{
 			PlayerPrefs.SetInt("hasHackerEdition", 1);
 		}
-		//UNITY ADS
-		//Advertisement.Initialize("103821");
 
-		//GAME CENTER AND GPG
-		//KTGameCenter.SharedCenter().Authenticate();
-		//PlayGamesPlatform.Activate();
-		//Social.localUser.Authenticate((bool success) =>{      
+        PlayerPrefs.SetInt("hasHackerEdition", 1);
+        //UNITY ADS
+        //Advertisement.Initialize("103821");
 
-		//});
+        //GAME CENTER AND GPG
+        //KTGameCenter.SharedCenter().Authenticate();
+        //PlayGamesPlatform.Activate();
+        //Social.localUser.Authenticate((bool success) =>{      
 
-		bootUp();
+        //});
+
+        bootUp();
 		PlayerPrefs.SetInt("hasSetUpInitialMenu", 0); //THIS IS FOR THE setupMenu() and setupMenu2() on menu script
 													  //PlayerPrefs.SetInt("isFirstTimePlaying",0);
 													  //PlayerPrefs.SetInt("hasAlreadyBoughtPipSpin",1); //THIS IS INCASE I MAKE THE iOS VERSION FREE
@@ -89,11 +91,13 @@ public class SplashScreenManager : MonoBehaviour {
 				Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position); 
 				if(touchPosition.x > 1.29 && touchPosition.x < 3.24 && touchPosition.y > -5 && touchPosition.y < -3){
 					scanThumb();
-				}else if(touchPosition.x > -3.3 && touchPosition.x < -1.1 && touchPosition.y > -5.2 && touchPosition.y < -4.5){
-					if(canGoToHackerPage) {
-                       openHackerEditionPage();
-                    }
 				}
+				//else if(touchPosition.x > -3.3 && touchPosition.x < -1.1 && touchPosition.y > -5.2 && touchPosition.y < -4.5)
+				//{
+				//	if(canGoToHackerPage) {
+    //                   openHackerEditionPage();
+    //                }
+				//}
 			}
 		}
 	}
@@ -162,9 +166,11 @@ public class SplashScreenManager : MonoBehaviour {
             HackerEditionText.GetComponent<SpriteRenderer>().sortingLayerName = "Hidden";
         }
 
-		//middleText.SetActive(false);
-		Cover1.GetComponent<SpriteRenderer>().sortingLayerName = "Hidden";
-		yield return new WaitForSeconds (3.9f);
+        HackerEditionText.GetComponent<SpriteRenderer>().sortingLayerName = "Hidden";
+
+        //middleText.SetActive(false);
+        Cover1.GetComponent<SpriteRenderer>().sortingLayerName = "Hidden";
+		yield return new WaitForSeconds (0.9f);
 		//Cover1.GetComponent<SpriteRenderer>().sortingLayerName = "Hidden";
 		//yield return new WaitForSeconds (.5f);
 		Cover2.GetComponent<SpriteRenderer>().sortingLayerName = "Hidden";
