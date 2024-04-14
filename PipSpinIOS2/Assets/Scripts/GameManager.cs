@@ -240,25 +240,29 @@ public class GameManager : MonoBehaviour {
 
     public void determineNextScene() 
 	{
-/*        if (PlayerPrefs.GetInt("PlayerLevel") > 1)
-        {
-            PlayerPrefs.SetInt("adCounter", PlayerPrefs.GetInt("adCounter") + 1);
-            if (Advertisement.IsReady())
-            {
-                if (PlayerPrefs.GetInt("adCounter") >= 7)
-                {
-                    SceneManager.LoadScene(5);
-                }
-                else {
-                    SceneManager.LoadScene(1);
-                }
-            }
-            else {
-                SceneManager.LoadScene(1);
-            }
-        }
-        else {
-             SceneManager.LoadScene(1);
-        }*/
-    }
+        SceneManager.LoadScene(1);
+  //      if (PlayerPrefs.GetInt("PlayerLevel") > 1)
+		//{
+		//	PlayerPrefs.SetInt("adCounter", PlayerPrefs.GetInt("adCounter") + 1);
+		//	if (Advertisement.IsReady())
+		//	{
+		//		if (PlayerPrefs.GetInt("adCounter") >= 7)
+		//		{
+		//			SceneManager.LoadScene(5);
+		//		}
+		//		else
+		//		{
+		//			SceneManager.LoadScene(1);
+		//		}
+		//	}
+		//	else
+		//	{
+		//		SceneManager.LoadScene(1);
+		//	}
+		//}
+		//else
+		//{
+			
+		//}
+	}
 }
